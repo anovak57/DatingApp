@@ -32,9 +32,12 @@ namespace API.Data
                 .ToListAsync();
         }
 
-        public async Task<AppUser> GetUserByIdAsync(int id)
+        public async Task<MemberDto> GetUserByIdAsync(int id)
         {
-            return await _context.Users.FindAsync(id);
+            return await _context.Users
+                .Where(x => x.Id == id)
+                .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
+                .SingleOrDefaultAsync();
         }
 
         public async Task<AppUser> GetUserByUsernameAsync(string username)

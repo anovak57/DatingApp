@@ -34,12 +34,10 @@ public class UsersController : BaseApiController
     [HttpGet("{id:int}")] // /api/users/{id}
     public async Task<ActionResult<MemberDto>> GetUserById(int id)
     {
-        var user = await _userRepository.GetUserByIdAsync(id);
-
-        return _mapper.Map<MemberDto>(user);
+        return await _userRepository.GetUserByIdAsync(id);
     }
 
-    [HttpGet("{username}")] // /api/users/{id}
+    [HttpGet("{username}")]
     public async Task<ActionResult<MemberDto>> GetUserByUsername(string username)
     {
         return await _userRepository.GetMemberAsync(username);
