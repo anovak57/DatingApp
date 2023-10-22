@@ -52,4 +52,34 @@
   .gallery {
     height: 600px;
   }
+
+  .btn-danger {
+    background-color: firebrick;
+    border: none;
+  }
+
+  .btn-danger:disabled {
+    background-color: maroon;
+    border: none;
+  }
+
+  .btn-danger:hover {
+    background-color: darkred;
+    border: none;
+  }
+
+  .btn-warning {
+    background-color: darkorange;
+    border: none;
+  }
+
+  .btn-warning:disabled {
+    background-color: coral;
+    border: none;
+  }
+
+  .btn-warning:hover {
+    background-color: orange;
+    border: none;
+  }
   
